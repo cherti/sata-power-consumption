@@ -8,9 +8,9 @@ Therefore I'm interested to have a more gerenal assesment of this effect.
 
 Available power link management policies for SATA-devices are
 
-    * `max_performance`
-    * `min_power`
-    * `med_power_with_dipm` since Linux 4.15
+  * `max_performance`
+  * `min_power`
+  * `med_power_with_dipm` since Linux 4.15
 
 If you want to help out by contributing measurement data, the instructions to do so are listed below.
 Once the data is collected and evaluated, I'll link the writeup where the data will be analyzed and how you can use that for your own benefit here in the README, besides other places.
@@ -20,17 +20,17 @@ Once the data is collected and evaluated, I'll link the writeup where the data w
 
 To contribute data, you first need a laptop
 
-    * running linux
-	* housing an SSD via SATA (aka shows up as `/dev/sd...`)
-    * having at least ~3h of battery life
+  * running linux
+  * housing an SSD via SATA (aka shows up as `/dev/sd...`)
+  * having at least ~3h of battery life
 
 Then do the following:
 
-    1. Clone this repository.
-	2. Unplug your computer from your charger, such that it runs on battery.
-	3. Run the Python-script in this repo *as root* (because we need to write some system APIs).
-	4. Follow the instructions and leave the laptop alone (especially don't touch mouse or keyboard as this will wake up the screen again, compromising the measurement).
-	5. Once done, there will be a `tar.gz`-file containing the data. Send this to me, please. :)
+  1. Clone this repository.
+  2. Unplug your computer from your charger, such that it runs on battery.
+  3. Run the Python-script in this repo *as root* (because we need to write some system APIs).
+  4. Follow the instructions and leave the laptop alone (especially don't touch mouse or keyboard as this will wake up the screen again, compromising the measurement).
+  5. Once done, there will be a `tar.gz`-file containing the data. Send this to me, please. :)
 
 As the measurement (intentionally) takes some time (~3h), to gather enough data to reduce the impact of system services waking up and consuming power etc. onto the overall measurement, the procedure is best run overnight.
 
@@ -54,7 +54,7 @@ If you want to see yourself how the power consumption of your disk behaves, you 
 
 To use it, ensure that you have all dependencies for `eval_power.py` installed:
 
-    * `python3-numpy`
-	* `python3-matplotlib`
+  * `python3-numpy`
+  * `python3-matplotlib`
 
 Then `eval_power.py` should visualise the measured data when run inside the repository root.
