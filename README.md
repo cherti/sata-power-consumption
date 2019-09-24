@@ -21,8 +21,10 @@ Once the data is collected and evaluated, I'll link the writeup where the data w
 To contribute data, you first need a laptop
 
   * running linux
-  * housing an SSD via SATA (aka shows up as `/dev/sd...`)
+  * housing an SSD<sup>1</sup> via SATA (aka shows up as `/dev/sd...`)
   * having at least ~3h of battery life
+
+<sup>1) HDDs are not really of interest for this measurement as the power link management policy would also imply spindowns and therefore the performance impact would be too significant to be of practical use. Nevertheless, you could use the measurement-script for this as well, of course. For this dataset, however, I'm only interested in SSD-data.</sup>
 
 Then do the following:
 
