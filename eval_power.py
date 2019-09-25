@@ -4,8 +4,9 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
-import matplotlib as mpl
-mpl.rcParams['figure.dpi'] = 75
+# for hidpi-displays, play around with the 75
+#import matplotlib as mpl
+#mpl.rcParams['figure.dpi'] = 75
 
 folder = sys.argv[1] if len(sys.argv) >= 2 else 'power_consumption_measurement_data'
 
@@ -29,7 +30,6 @@ except:
 t = np.linspace(0, (len(sh)-1)*3, len(sh))
 
 def plot_all():
-	fig = plt.figure(figsize=(8, 6))
 	plt.plot(t, ah, 'r-.', label='async/HIPM')
 	plt.plot(t, ad, 'k-.', label='async/DIPM')
 	plt.plot(t, sh, 'r--', label='sync/HIPM')
@@ -48,7 +48,6 @@ def plot_all():
 
 
 def plot_by_mode(title, hipm, dipm, med_power=None, filename=None):
-	fig = plt.figure(figsize=(8, 6))
 	plt.plot(t, ah, 'r', label='HIPM')
 	plt.plot(t, ad, 'k', label='DIPM')
 	if med_power is not None:
