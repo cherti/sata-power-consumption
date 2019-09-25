@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 mpl.rcParams['figure.dpi'] = 75
 
-folder = sys.argv[1] or 'power_consumption_measurement_data'
+folder = sys.argv[1] if len(sys.argv) >= 2 else 'power_consumption_measurement_data'
 
 sh = np.loadtxt(folder + '/sact_hipm')*1e-6
 sd = np.loadtxt(folder + '/sact_dipm')*1e-6
