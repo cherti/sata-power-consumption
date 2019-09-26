@@ -60,3 +60,17 @@ To use it, ensure that you have all dependencies for `eval_power.py` installed:
   * `python3-matplotlib`
 
 Then `eval_power.py` should visualise the measured data when run inside the repository root.
+
+## Data collected
+
+For clarity, this is a list of data that will be collected and is contained in the `tar.gz`-file:
+
+  * power consumption measurement data for the three different policies + the name of the source file for the power consumption in `/sys`
+  * throughput measurement data<sup>2</sup>
+  * measurement parameters (time, number of datapoints etc.)
+  * disk model (both the human readable name you give it and what the model calls itself<sup>3</sup>
+
+
+<sup>2) Beware that this data is *not* suited for judging the actual performance of the disk and the measurement type is *not* tailored towards measuring the performance of the disk, but merely to trigger some activity. For measuring the performance impact of the different policies, use a dedicated benchmarking tool such as for example [fio](https://github.com/axboe/fio).</sup>
+
+<sup>3) As some disk models have specified quite useless information in their readable model-parameter, the script asks you to name the disk model yourself, although this seems redundant in the first moment. It's just a precautionary measure. Don't worry too much if you don't know the exact name of the model. For example if it came with the machine, just specify something like `came with laptop <laptop model name>`. :)</sup>
