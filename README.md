@@ -3,7 +3,7 @@
 ## Introduction
 
 This is a project to evaluate the impact of SATA power link management onto the battery life of your laptop.
-Experiments on my own machine yielded a reduced power consumption by a significant margin (up to 30% reduced consumption excluding the screen) for one device.
+Experiments on my own machines yielded a reduced power consumption by a, for my tastes, significant margin (up to 30% reduced consumption with screen turned off) for one device.
 Therefore I'm interested to have a more gerenal assesment of this effect.
 
 Available power link management policies for SATA-devices are
