@@ -70,7 +70,7 @@ with open(power_consumption_file, 'r') as f:
 		exit(3)
 
 
-print(' :: estimated runtime:', round((3*3*datap*timestep + 3*convergence_time)/60, 2), 'min')
+print(' :: estimated runtime:', round((4*3*datap*timestep + 4*convergence_time)/60, 2), 'min')
 print(' :: The screen will be turned off to save power, please turn of wifi and other things')
 print('    that could consume power to keep the measurements as clean as possible. Thanks!')
 print('    Please do not use the computer until the measurement has finished')
@@ -138,6 +138,12 @@ lpdn = measure_without_activity()
 lpds = measure_with_activity_async()
 lpda = measure_with_activity_sync()
 
+set_policy('medium_power', target_disk_policy_file)
+time.sleep(convergence_time)
+mpdn = measure_without_activity()
+mpds = measure_with_activity_async()
+mpda = measure_with_activity_sync()
+
 try:
 	set_policy('med_power_with_dipm', target_disk_policy_file)
 	time.sleep(convergence_time)
@@ -164,6 +170,9 @@ save_data('sact_medp', meds)
 save_data('aact_hipm', hpda)
 save_data('aact_dipm', lpda)
 save_data('aact_medp', meda)
+save_data('nact_mipm', mpdn)
+save_data('sact_mipm', mpds)
+save_data('aact_mipm', mpda)
 
 device_model = "unknown"
 try:
