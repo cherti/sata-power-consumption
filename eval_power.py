@@ -19,7 +19,11 @@ nd = np.loadtxt(folder + '/nact_dipm')*1e-6
 
 # if we have med_power available...
 sm, am, nm = None, None, None
+smed, amed, nmed = None, None, None
 try:
+	smed = np.loadtxt(folder + '/sact_mipm')*1e-6
+	amed = np.loadtxt(folder + '/aact_mipm')*1e-6
+	nmed = np.loadtxt(folder + '/nact_mipm')*1e-6
 	sm = np.loadtxt(folder + '/sact_medp')*1e-6
 	am = np.loadtxt(folder + '/aact_medp')*1e-6
 	nm = np.loadtxt(folder + '/nact_medp')*1e-6
@@ -47,11 +51,13 @@ def plot_all():
 	plt.ylabel('power consumption [W]')
 
 
-def plot_by_mode(title, hipm, dipm, med_power=None, filename=None):
+def plot_by_mode(title, hipm, dipm, med=None, med_with_dipm=None, filename=None):
 	plt.plot(t, ah, 'r', label='HIPM')
 	plt.plot(t, ad, 'k', label='DIPM')
-	if med_power is not None:
-		plt.plot(t, med_power, 'b', label='med_power')
+	if med is not None:
+		plt.plot(t, med, 'b', label='medium_power')
+	if med_with_dipm is not None:
+		plt.plot(t, med_with_dipm, 'g', label='med_power_with_dipm')
 
 	plt.title(title)
 	plt.legend()
@@ -63,6 +69,6 @@ def plot_by_mode(title, hipm, dipm, med_power=None, filename=None):
 		plt.show()
 
 
-plot_by_mode('idle, no disk activity', nh, nd, nm)
-plot_by_mode('activity asynchronous to measurement', ah, ad, am)
-plot_by_mode('activity synchronous to measurement', sh, sd, sm)
+plot_by_mode('idle, no disk activity', nh, nd, nmed, nm)
+plot_by_mode('activity asynchronous to measurement', ah, ad, amed, am)
+plot_by_mode('activity synchronous to measurement', sh, sd, smed, sm)
