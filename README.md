@@ -10,6 +10,7 @@ Available power link management policies for SATA-devices are
 
   * `max_performance`
   * `min_power`
+  * `medium_power`
   * `med_power_with_dipm` since Linux 4.15
 
 If you want to help out by contributing measurement data, the instructions to do so are listed below.
