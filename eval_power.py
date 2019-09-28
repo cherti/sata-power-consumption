@@ -4,9 +4,10 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
-# for hidpi-displays, play around with the 75
-#import matplotlib as mpl
-#mpl.rcParams['figure.dpi'] = 75
+if 'hidpi' in sys.argv[2:]:
+	# for hidpi-displays, play around with the 75
+	import matplotlib as mpl
+	mpl.rcParams['figure.dpi'] = 75
 
 folder = sys.argv[1] if len(sys.argv) >= 2 else 'power_consumption_measurement_data'
 
