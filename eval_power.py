@@ -21,12 +21,12 @@ nd = np.loadtxt(folder + '/nact_dipm')*1e-6
 sm, am, nm = None, None, None
 smed, amed, nmed = None, None, None
 try:
-	smed = np.loadtxt(folder + '/sact_mipm')*1e-6
-	amed = np.loadtxt(folder + '/aact_mipm')*1e-6
-	nmed = np.loadtxt(folder + '/nact_mipm')*1e-6
 	sm = np.loadtxt(folder + '/sact_medp')*1e-6
 	am = np.loadtxt(folder + '/aact_medp')*1e-6
 	nm = np.loadtxt(folder + '/nact_medp')*1e-6
+	smed = np.loadtxt(folder + '/sact_mipm')*1e-6
+	amed = np.loadtxt(folder + '/aact_mipm')*1e-6
+	nmed = np.loadtxt(folder + '/nact_mipm')*1e-6
 except:
 	pass
 
