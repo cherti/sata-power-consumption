@@ -53,8 +53,8 @@ def plot_all():
 
 
 def plot_by_mode(title, hipm, dipm, med=None, med_with_dipm=None, filename=None):
-	plt.plot(t, ah, 'r', label='HIPM')
-	plt.plot(t, ad, 'k', label='DIPM')
+	plt.plot(t, ah, 'r', label='max_performance')
+	plt.plot(t, ad, 'k', label='min_power')
 	if med is not None:
 		plt.plot(t, med, 'b', label='medium_power')
 	if med_with_dipm is not None:
