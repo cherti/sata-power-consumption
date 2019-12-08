@@ -61,6 +61,11 @@ except PermissionError:
 	print(' ! Script must be run as root, otherwise we cannot switch SATA power management policies.', file=sys.stderr)
 	print(' ! Please run as root. If you did and it still failed, please contact the author. Thanks!', file=sys.stderr)
 	exit(2)
+except OSError as e:
+	print(' ! An unexpected system error occurred, unfortunately we cannot proceed here.', file=sys.stderr)
+	print(' ! The error is: {}'.format(e), file=sys.stderr)
+	exit(4)
+
 
 
 # test if we can read power consumption
