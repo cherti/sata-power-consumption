@@ -1,5 +1,7 @@
 # Measuring the effect of SATA power link management onto your battery life
 
+Results gathered with this code can be seen [here](https://insanity.industries/post/sata-power-consumption/).
+
 ## Introduction
 
 This is a project to evaluate the impact of SATA power link management onto the battery life of your laptop.
@@ -14,7 +16,7 @@ Available power link management policies for SATA-devices are
   * `med_power_with_dipm` since Linux 4.15
 
 If you want to help out by contributing measurement data, the instructions to do so are listed below.
-Once the data is collected and evaluated, I'll link the writeup where the data will be analyzed and how you can use that for your own benefit here in the README, besides other places.
+<strike>Once the data is collected and evaluated, I'll link the writeup where the data will be analyzed and how you can use that for your own benefit here in the README, besides other places.</strike> [Go here to see results.](https://insanity.industries/post/sata-power-consumption/).
 
 
 ## Contributing data
